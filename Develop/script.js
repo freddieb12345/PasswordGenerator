@@ -58,7 +58,12 @@ function generatePassword() {
     var NumericArray = "1234567890".split('') ;
     var passwordCriteria = NumericArray.concat(passwordCriteria) 
     console.log(passwordCriteria)
-  }  
+  } 
+  
+  //Adds check to make sure at least one of the criteria is selcted
+  if (Numeric == false && lowerCase == false && uppercase == false && specialcharacters == false){
+    window.alert("Please select at least one criteria option")
+  } 
 
   //Randomly selects an element from the passwordCriteria array and addds it to the password array. This repeats equal to the value that the user inputted for the password length
   for (let i=0; i<lengthInput; i++) {
