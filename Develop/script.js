@@ -27,10 +27,6 @@ function passwordLength() { //Saves user input into a variable
   console.log(lengthInput);
 }
 
-function lowercase() {
-  var lowerCase = document.getElementById("lowercase").checked;
-  console.log(lowerCase)
-}
 
 function uppercase() {
   var uppercase = document.getElementById("uppercase").checked;
@@ -38,27 +34,60 @@ function uppercase() {
 } 
 
 function numeric() {
-  var numeric = document.getElementById("numeric").checked;
-  console.log(numeric)
+  var Numeric = document.getElementById("numeric").checked;
+  console.log(Numeric)
 } 
 
 function specialCharacters() {
-  var specialCharacters = document.getElementById("specialCharacters").checked;
-  console.log(specialCharacters)
+  var specialcharacters = document.getElementById("specialCharacters").checked;
+  console.log(specialcharacters)
 } 
 
-
 function generatePassword() { //This function will randomly pick an element out of the previous array and place it into a new array
+  var passwordCriteria = [];
+
   passwordLength();
-  lowercase();
-  uppercase();
+
+  var lowerCase = document.getElementById("lowercase").checked;
+  console.log(lowerCase)
+  var uppercase = document.getElementById("uppercase").checked;
+  console.log(uppercase);
+  var specialcharacters = document.getElementById("specialCharacters").checked;
+  console.log(specialcharacters );
+  var Numeric = document.getElementById("numeric").checked;
+  console.log(specialcharacters );
+
   numeric();
   specialCharacters();
+
+  /* for (let i=0; i<lengthInput; i++){ */
+    if (lowerCase == true){
+      lowercasealphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+      var passwordCriteria = lowercasealphabet.concat(passwordCriteria)
+      console.log(passwordCriteria)
+    /* } */
+    }
+    if (uppercase == true){
+      uppercasealphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      var passwordCriteria = uppercasealphabet.concat(passwordCriteria)
+      console.log(passwordCriteria)
+    }
+    if (specialcharacters == true){
+      var specialCharactersArray = "~`!@#$%^&*()-_+={}[]|\/:;<>,.?".split('') ;
+      var passwordCriteria = specialCharactersArray.concat(passwordCriteria) 
+      console.log(passwordCriteria)
+    }  
+    if (Numeric == true){
+      var NumericArray = "1234567890".split('') ;
+      var passwordCriteria = NumericArray.concat(passwordCriteria) 
+      console.log(passwordCriteria)
+    }  
+
 }
 
 
 
-//
+
 
 
 
