@@ -14,24 +14,24 @@
       </header>
       <article class="card">
         <h2>Generate a Password</h2>
-        <button onclick="showForm()" class="btn">Pick Criteria for Password</button>
+        <button onclick="showForm()" class="btn" id ="criteria">Pick Criteria for Password</button>
         <container class="card-body" >
           <form id="password">
             <p>
-              <label for = "PasswordLength">Password Length:</label>
-              <input type = "number" min="8" max="128">
+              <label for = "PasswordLength" >Password Length:</label>
+              <input type = "number" min="8" max="128" id ="length">
             </p>
             <p>
               <label for = "CharacterTypes">Character types wanted in password:</label><br>
-              <input type = "checkbox" name="CharacterTypes" value="lowercase">Lowercase<br>
-              <input type = "checkbox" name="CharacterTypes" value="uppercase">Uppercase<br>
-              <input type = "checkbox" name="CharacterTypes" value="numeric">Numeric<br>
-              <input type = "checkbox" name="CharacterTypes" value="specialCharacters">Special Characters
+              <input type = "checkbox" name="CharacterTypes" value="Lowercase" id ="lowercase">Lowercase<br>
+              <input type = "checkbox" name="CharacterTypes" value="uppercase" id ="uppercase">Uppercase<br>
+              <input type = "checkbox" name="CharacterTypes" value="numeric" id ="numeric">Numeric<br>
+              <input type = "checkbox" name="CharacterTypes" value="specialCharacters" id ="specialCharacters">Special Characters
             </p>
           </form>
         </container>
         <section class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button onclick="generatePassword()" id="generate" class="btn">Generate Password</button>
         </section>
       </article>
     <script src="script.js"></script>
