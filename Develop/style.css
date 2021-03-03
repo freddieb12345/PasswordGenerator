@@ -34,9 +34,15 @@ header {
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  text-align: center;
 }
 
-.card h2::after {
+.card h2 .card button {
+  text-align: center;
+  
+}
+
+.card h2::after, .card-footer::before { /* This adds the grey border between this element and the one below it */
   content: " ";
   display: block;
   width: 100%;
@@ -46,18 +52,11 @@ header {
 
 .card-body {
   min-height: 100px;
+  display: block;
 }
 
 .card-footer {
   text-align: center;
-}
-
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
 }
 
 .card-footer::after {
@@ -96,7 +95,7 @@ button[disabled] {
   -moz-appearance: none;
   appearance: none;
   border: none;
-  display: block;
+  display: none;
   width: 100%;
   padding-top: 15px;
   padding-left: 15px;

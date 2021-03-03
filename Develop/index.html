@@ -10,15 +10,25 @@
   <body>
       <header>
         <h1>Password Generator</h1>
+        
       </header>
       <article class="card">
         <h2>Generate a Password</h2>
-        <container class="card-body">
-          <textarea
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+        <button onclick="showForm()" class="btn">Pick Criteria for Password</button>
+        <container class="card-body" >
+          <form id="password">
+            <p>
+              <label for = "PasswordLength">Password Length:</label>
+              <input type = "number" min="8" max="128">
+            </p>
+            <p>
+              <label for = "CharacterTypes">Character types wanted in password:</label><br>
+              <input type = "checkbox" name="CharacterTypes" value="lowercase">Lowercase<br>
+              <input type = "checkbox" name="CharacterTypes" value="uppercase">Uppercase<br>
+              <input type = "checkbox" name="CharacterTypes" value="numeric">Numeric<br>
+              <input type = "checkbox" name="CharacterTypes" value="specialCharacters">Special Characters
+            </p>
+          </form>
         </container>
         <section class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
@@ -27,3 +37,11 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+<!-- <textarea
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea> -->
