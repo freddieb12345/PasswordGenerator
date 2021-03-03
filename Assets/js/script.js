@@ -25,10 +25,10 @@ function generatePassword() {
   if (lengthInput < 8 || lengthInput > 128){
     window.alert("Length must be between 8 and 128");
   } else {
-    var lowerCase = document.getElementById("one").checked;
-    var uppercase = document.getElementById("two").checked;
-    var Numeric = document.getElementById("three").checked;
-    var specialcharacters = document.getElementById("four").checked;
+    var lowerCase = document.getElementById("lowercase").checked;
+    var uppercase = document.getElementById("uppercase").checked;
+    var specialcharacters = document.getElementById("specialCharacters").checked;
+    var Numeric = document.getElementById("numeric").checked;
     var lengthInput = document.getElementById("length").value;
     var Numeric = document.getElementById("numeric").checked;
     var specialcharacters = document.getElementById("specialCharacters").checked;
