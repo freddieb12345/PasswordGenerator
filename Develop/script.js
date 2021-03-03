@@ -45,7 +45,8 @@ function specialCharacters() {
 
 function generatePassword() { //This function will randomly pick an element out of the previous array and place it into a new array
   var passwordCriteria = [];
-
+  var password = [];
+  
   passwordLength();
 
   var lowerCase = document.getElementById("lowercase").checked;
@@ -56,33 +57,38 @@ function generatePassword() { //This function will randomly pick an element out 
   console.log(specialcharacters );
   var Numeric = document.getElementById("numeric").checked;
   console.log(specialcharacters );
+  var lengthInput = document.getElementById("length").value;
+  console.log(specialcharacters );
 
   numeric();
   specialCharacters();
+  if (lowerCase == true){
+    lowercasealphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    var passwordCriteria = lowercasealphabet.concat(passwordCriteria)
+    console.log(passwordCriteria)
 
-  /* for (let i=0; i<lengthInput; i++){ */
-    if (lowerCase == true){
-      lowercasealphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-      var passwordCriteria = lowercasealphabet.concat(passwordCriteria)
-      console.log(passwordCriteria)
-    /* } */
-    }
-    if (uppercase == true){
-      uppercasealphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-      var passwordCriteria = uppercasealphabet.concat(passwordCriteria)
-      console.log(passwordCriteria)
-    }
-    if (specialcharacters == true){
-      var specialCharactersArray = "~`!@#$%^&*()-_+={}[]|\/:;<>,.?".split('') ;
-      var passwordCriteria = specialCharactersArray.concat(passwordCriteria) 
-      console.log(passwordCriteria)
-    }  
-    if (Numeric == true){
-      var NumericArray = "1234567890".split('') ;
-      var passwordCriteria = NumericArray.concat(passwordCriteria) 
-      console.log(passwordCriteria)
-    }  
-
+  }
+  if (uppercase == true){
+    uppercasealphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    var passwordCriteria = uppercasealphabet.concat(passwordCriteria)
+    console.log(passwordCriteria)
+  }
+  if (specialcharacters == true){
+    var specialCharactersArray = "~`!@#$%^&*()-_+={}[]|\/:;<>,.?".split('') ;
+    var passwordCriteria = specialCharactersArray.concat(passwordCriteria) 
+    console.log(passwordCriteria)
+  }  
+  if (Numeric == true){
+    var NumericArray = "1234567890".split('') ;
+    var passwordCriteria = NumericArray.concat(passwordCriteria) 
+    console.log(passwordCriteria)
+  }  
+  for (let i=0; i<lengthInput; i++) {
+    var random = passwordCriteria[Math.floor(Math.random() * passwordCriteria.length)];
+    password = password.concat(random);
+  }
+  console.log(password.join(""));
+  document.getElementById("finalPassword").innerHTML = password.join("");
 }
 
 
