@@ -1,17 +1,9 @@
-// Assignment Code
-
-var generateBtn = document.querySelector("#generate");
-
+//Creates variables for the form and the button the shows the form
 var myForm = document.getElementById("password");
-
 var criteriaBtn = document.getElementById("criteria");
 
-
-  
-
-// Write password to the #password input
-
-function showForm() { //This function will show the user the form and then create the arrays that will store the values given by the user
+//Creates function that will hide/show the form on button click
+function showForm() { 
   if(myForm.style.display == 'block'){
     myForm.style.display = "none";
     criteriaBtn.innerHTML = "Pick Criteria for Password";
@@ -22,33 +14,14 @@ function showForm() { //This function will show the user the form and then creat
   }
 }
 
-function passwordLength() { //Saves user input into a variable
-  var lengthInput = document.getElementById("length").value;
-  console.log(lengthInput);
-}
-
-
-function uppercase() {
-  var uppercase = document.getElementById("uppercase").checked;
-  console.log(uppercase)
-} 
-
-function numeric() {
-  var Numeric = document.getElementById("numeric").checked;
-  console.log(Numeric)
-} 
-
-function specialCharacters() {
-  var specialcharacters = document.getElementById("specialCharacters").checked;
-  console.log(specialcharacters)
-} 
-
-function generatePassword() { //This function will randomly pick an element out of the previous array and place it into a new array
+function generatePassword() { 
+  //Creates arrays for the password criteria and password
   var passwordCriteria = [];
   var password = [];
   
-  passwordLength();
-
+  //Checks the values of the form inputs and saves them as variables.
+  var lengthInput = document.getElementById("length").value;
+  console.log(lengthInput);
   var lowerCase = document.getElementById("lowercase").checked;
   console.log(lowerCase)
   var uppercase = document.getElementById("uppercase").checked;
@@ -59,9 +32,12 @@ function generatePassword() { //This function will randomly pick an element out 
   console.log(specialcharacters );
   var lengthInput = document.getElementById("length").value;
   console.log(specialcharacters );
+  var Numeric = document.getElementById("numeric").checked;
+  console.log(Numeric);
+  var specialcharacters = document.getElementById("specialCharacters").checked;
+  console.log(specialcharacters);
 
-  numeric();
-  specialCharacters();
+  //Adds the required criteria to the passwordCriteria array
   if (lowerCase == true){
     lowercasealphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
     var passwordCriteria = lowercasealphabet.concat(passwordCriteria)
@@ -83,6 +59,8 @@ function generatePassword() { //This function will randomly pick an element out 
     var passwordCriteria = NumericArray.concat(passwordCriteria) 
     console.log(passwordCriteria)
   }  
+
+  //Randomly selects an element from the passwordCriteria array and addds it to the password array. This repeats equal to the value that the user inputted for the password length
   for (let i=0; i<lengthInput; i++) {
     var random = passwordCriteria[Math.floor(Math.random() * passwordCriteria.length)];
     password = password.concat(random);
