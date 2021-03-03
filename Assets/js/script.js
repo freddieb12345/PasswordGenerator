@@ -21,47 +21,34 @@ function generatePassword() {
   
   //Checks the values of the form inputs and saves them as variables.
   var lengthInput = document.getElementById("length").value;
-  console.log(lengthInput);
   //Checks to see if theres a valid input for the password length
   if (lengthInput < 8 || lengthInput > 128){
     window.alert("Length must be between 8 and 128");
   } else {
-    var lowerCase = document.getElementById("lowercase").checked;
-    console.log(lowerCase)
-    var uppercase = document.getElementById("uppercase").checked;
-    console.log(uppercase);
-    var specialcharacters = document.getElementById("specialCharacters").checked;
-    console.log(specialcharacters );
-    var Numeric = document.getElementById("numeric").checked;
-    console.log(specialcharacters );
+    var lowerCase = document.getElementById("one").checked;
+    var uppercase = document.getElementById("two").checked;
+    var Numeric = document.getElementById("three").checked;
+    var specialcharacters = document.getElementById("four").checked;
     var lengthInput = document.getElementById("length").value;
-    console.log(specialcharacters );
     var Numeric = document.getElementById("numeric").checked;
-    console.log(Numeric);
     var specialcharacters = document.getElementById("specialCharacters").checked;
-    console.log(specialcharacters);
 
     //Adds the required criteria to the passwordCriteria array
     if (lowerCase == true){
       lowercasealphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
       var passwordCriteria = lowercasealphabet.concat(passwordCriteria)
-      console.log(passwordCriteria)
-
     }
     if (uppercase == true){
       uppercasealphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
       var passwordCriteria = uppercasealphabet.concat(passwordCriteria)
-      console.log(passwordCriteria)
     }
     if (specialcharacters == true){
       var specialCharactersArray = "~`!@#$%^&*()-_+={}[]|\/:;<>,.?".split('') ;
       var passwordCriteria = specialCharactersArray.concat(passwordCriteria) 
-      console.log(passwordCriteria)
     }  
     if (Numeric == true){
       var NumericArray = "1234567890".split('') ;
       var passwordCriteria = NumericArray.concat(passwordCriteria) 
-      console.log(passwordCriteria)
     } 
     
     //Adds check to make sure at least one of the criteria is selcted
@@ -74,7 +61,6 @@ function generatePassword() {
       var random = passwordCriteria[Math.floor(Math.random() * passwordCriteria.length)];
       password = password.concat(random);
     }
-    console.log(password.join(""));
     document.getElementById("finalPassword").innerHTML = password.join("");
     }
 }
