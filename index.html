@@ -13,10 +13,10 @@
         <h1>Password Generator</h1> <!-- Creates header at top of the page -->
         
       </header>
-      <article class="card"> <!-- Creates main card containing the rest of the code -->
+      <main class="card"> <!-- Creates main card containing the rest of the code -->
         <h2>Generate a Password</h2> <!-- Creates a header for the card -->
         <button onclick="showForm()" class="btn" id ="criteria">Pick Criteria for Password</button> <!-- Creates a button that activates a javascript function -->
-        <container class="card-body" >
+        <section class="card-body" >
           <form id="password"> <!-- Creates a form asking for user input -->
             <p>
               <label for = "PasswordLength" >Password Length:</label>
@@ -30,12 +30,12 @@
               <input type = "checkbox" name="CharacterTypes" value="specialCharacters" id ="specialCharacters">Special Characters
             </p>
           </form>
-        </container>
+        </section>
         <section class="card-footer" > 
           <button onclick="generatePassword()" id="generate" class="btn">Generate Password</button> <br> <!-- Creates a button that generates the password by activating a function in javascript -->
           <text id="finalPassword"></text>
         </section>
-      </article>
+      </main>
     <script src="./Assets/js/script.js"></script>
   </body>
 </html>
